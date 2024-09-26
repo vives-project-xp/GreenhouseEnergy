@@ -1,0 +1,62 @@
+Greenhouse energy
+
+
+doelstelling:
+kijken voor alles doen samenwerken
+
+zonnepanelen, Turbine, batterij, sensor
+
+een werkend testprototype
+
+informatie verzamelen op een micro controller
+
+welke problemen kunnen we tegenkomen:
+
+wat gebeurt er als er geen energie meer is
+
+mogelijke backup energie als er een tijdje geen oplading geweest is 
+
+als de batterij vol is en er komt nog steeds energie toe naar waar gaat het
+
+limit zetten op de procentage van de batterij bv 80% max wegens levensduur van de batterij
+
+3 fase windturbine overzetten naar dc voor de zonnepannelen
+
+
+
+
+
+mogelijke vragen
+
+hoeveel voltage is de batterij
+
+berekening wij de verbruik?
+
+hoeveel turbine, zonnepanelen mogen we gebruiken
+
+hoeveel energy krijgen we en hoeveel verbruiken we
+
+Hoeveel volt moet de batterij leveren 
+
+worden de andere opdrachten gepowered door greenhouse energy of worden ze voor veiligheid met netstroom gepowered
+
+Hoeveel volt moet de batterij leveren 
+
+
+
+ideeën 
+
+zonnepaneel waterkoelen en het warm water opslaan voor mogelijkse verwarming van de serre
+
+
+
+
+research:
+
+hoe werkt een stroomregelaar
+
+specifieren welke data moet doorgestuurd worden
+
+
+
+
