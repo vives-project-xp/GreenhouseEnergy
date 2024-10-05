@@ -1,0 +1,4 @@
+BMS (battery management system): Zorgt ervoor dat de batterij niet overlaad of onderlaad (door communicatie met de laad eenheid), geeft statistieken weer zoals soc (state of charge) en soh (state of health).
+Buck converter: Zet de spanning van de zonnepanelen om naar de spanning die het meest geschikt is voor het opladen van de batterijen, bv 49V voor batterijen van 48V.
+Micro controller met MPPT algoritme: Zegt tegen de buck converter naar welke spanning hij moet omzetten voor de beste oplading, Hangt af van soc en output voltage van de zonnepanelen. Als de BMS zegt dat de batterij vol zit moet het ook ervoor zorgen dat de oplading stopt.
+
