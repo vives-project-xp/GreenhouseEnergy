@@ -1,0 +1,3 @@
+bms is eigenlijk een microcontroller die op zijn gpio poorten de rezultaten van volt&termo-meters van elke batterij binnen leest. Dan communiceert het de soc, soh en temp met onderdelen of dashboards die deze informatie nodig hebben.
+Als de bms ontdekt dat een batterij over-charged of onder-charged dan zal hij de verbruiker/oplader erop attent maken dat hij moet stoppen.
+Als er tussen cellen spannings verschillen ontstaan dan kan de bms ze verbinden en er komaf mee maken (misschien mos fets nodig hiervoor).
