@@ -6,4 +6,4 @@
 6. Kabels V
 7. Fuzeboxes (Max 30Ampere)
 8. Brandkast 
-9. DC-DC converters 48v->12v 12v->5v
+9. DC-DC converters 48v->12v 48v->5v
