@@ -1,4 +1,0 @@
-Batterij: Modulair ontwerp waardoor ze op elkaar kunnen gestackt en gereproduceerd worden.
-Batterijen die op elkaar gestackt zijn moeten verbonden zijn.
-De top en onderkant moeten verbonden zijn met de oplaad eenheid.
-Per batterij is er een volt meter en een temperatuur sensor die terug lijden naar een microcontroller (bms)
