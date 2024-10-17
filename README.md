@@ -17,5 +17,5 @@ We kregen eerst de opdracht om elektriciteit te voorzien voor alle projecten die
 ## Hardware
 - BMS: Gezondheid van de batterij beschermen en sensordata leveren via UART.
 - MPPT Charge controller: Opladen van de batterij aan het juiste voltage met de input van de zonnepanelen.
-- Batterijen 13-Serieel 18650E en 18650B met 3.7V samen 48V, in een modulair systeem om meer parallel te kunnen plaatsen.
+- Batterijen 13-Serieel NRC8650PF ,INR18650E en NRC8650B met 3.7V samen 48V, in een modulair systeem om meer parallel te kunnen plaatsen.
 - Zekeringen hier en daar.
