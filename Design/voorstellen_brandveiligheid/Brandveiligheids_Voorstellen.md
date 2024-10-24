@@ -21,5 +21,6 @@ Tenzij we voor de professionele opties gaan zijn er nog aanpassingen nodig die i
 
 ## Onderwaterzet systeem
 
---we zijn nog bezig met het ontwerp--<br>
-Bovenkant zal zeker zijn waar de kabels in gaan omdat anders het water er weer uit zal lopen.
+![Onderwaterzetconcepten] (Design\voorstellen_brandveiligheid\OnderwaterzetConcepten.png)
+
+Bovenkant zal in ieder geval zijn waar de kabels in gaan omdat anders het water er weer uit zal lopen.
