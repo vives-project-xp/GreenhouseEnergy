@@ -15,6 +15,10 @@ Het voordeel van dit product is dat hij een eigen temperatuur meter heeft waardo
 Het product is ontworpen en gemaakt geweest in bedoeling voor Lithium-ion batterijen op te bergen.
 https://www.emtez.be/nl-be/lithium-ion-quarantine-safety-cabinets
 
+Tenzij we voor de professionele opties gaan zijn er nog aanpassingen nodig die ingrijpend/kostelijk kunnen zijn, namelijk:
+1. Gaten boren in de kist om eletrische kabels te faciliteren
+2. Onderwaterzet systeem inbouwen (custom projectwerk)
+
 ## Onderwaterzet systeem
 
 --we zijn nog bezig met het ontwerp--<br>
