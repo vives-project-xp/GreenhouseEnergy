@@ -1,26 +1,46 @@
 ## Behuizing
-### Kluis via 2de hands
-In teams heeft Joshua heel wat kluizen beschikbaar op 2dehands.be gepost, gaande van prijzen van 100-300€.
-Kluizen speciaal gemaakt voor brand tegen te gaan kunnen temperaturen van 1000°C of hoger weerstaan, waarbij de binnentemperatuur onder de kritische 177°C blijft. 
+
+### Kluis via 2dehands
+In teams heeft Joshua heel wat kluizen beschikbaar op 2dehands.be gepost, variërend van prijzen van €100-300.  
+Kluizen die speciaal zijn ontworpen om branden te weerstaan, kunnen temperaturen van 1000°C of hoger weerstaan, waarbij de binnentemperatuur onder de kritische 177°C blijft.
+
 ### Stalen doos
-Staal begint de verzwakken vanaf 500°C en smelt van 1370°C tot 1500°C, let wel op de temperatuur in een stalen doos loopt sneller op dan een brandwerende kluis.<br>
-https://www.mcmaster.com/products/steel-storage-boxes/chests-5/?s=steel-storage-boxes<br>
-Die van 271$ is groot genoeg voor ons project.
+Staal begint te verzwakken vanaf 500°C en smelt tussen 1370°C en 1500°C. Let wel, de temperatuur in een stalen doos loopt sneller op dan in een brandwerende kluis.  
+[McMaster Stalen doos van $271](https://www.mcmaster.com/products/steel-storage-boxes/chests-5/?s=steel-storage-boxes) is groot genoeg voor ons project.
+
 ### Professioneel
-Het voordeel van dit is dat we geen extra bewaterings systeem nodig gaan hebben omdat het daar goed zit.<br>
-https://www.batterysafetybox.com/sizes/<br>
-Voor ons project zouw Medium II een goeie oplossing zijn, maar we kunnen de prijs niet zien zolang we geen contact opnemen en dit zal waarschijnlijk richting de 1000-2000€ gaan.
-### Professioneel
-Het voordeel van dit product is dat hij een eigen temperatuur meter heeft waardoor hij zelf de batterypack in quarantaine kan steken.
-Het product is ontworpen en gemaakt geweest in bedoeling voor Lithium-ion batterijen op te bergen.
-https://www.emtez.be/nl-be/lithium-ion-quarantine-safety-cabinets
+Een professioneel systeem biedt voordelen, zoals dat er geen extra bewateringssysteem nodig is omdat dit goed geregeld is.  
+[Battery Safety Box - Medium II](https://www.batterysafetybox.com/sizes) lijkt een goede oplossing voor ons project. De prijs is niet zichtbaar zonder contact op te nemen, maar zal waarschijnlijk tussen de €1000-2000 liggen.
 
-Tenzij we voor de professionele opties gaan zijn er nog aanpassingen nodig die ingrijpend/kostelijk kunnen zijn, namelijk:
-1. Gaten boren in de kist om eletrische kabels te faciliteren
-2. Onderwaterzet systeem inbouwen (custom projectwerk)
+### Professioneel (met temperatuurmeter)
+Dit product heeft een ingebouwde temperatuursensor, waardoor het de batterij automatisch in quarantaine kan zetten als er een probleem ontstaat.  
+Het is specifiek ontworpen voor het opslaan van Lithium-ion batterijen.  
+[EMTEZ Quarantine Safety Cabinets](https://www.emtez.be/nl-be/lithium-ion-quarantine-safety-cabinets)
 
-## Onderwaterzet systeem
+Tenzij we voor de professionele opties gaan, zullen er enkele aanpassingen nodig zijn die ingrijpend of kostbaar kunnen zijn, namelijk:
 
-![Onderwaterzetconcepten](/voorstellen_brandveiligheid/OnderwaterzetConcepten.png)
+1. Gaten boren in de kist om elektrische kabels te faciliteren.
+2. Een onderwaterzet-systeem inbouwen (custom projectwerk).
 
-Bovenkant zal in ieder geval zijn waar de kabels in gaan omdat anders het water er weer uit zal lopen.
+---
+
+## Onderwaterzet Systeem
+
+![Batterij (1)](https://github.com/user-attachments/assets/d63c3ffa-bfbf-4881-86a4-fa5df238c3fe)
+
+De bovenkant van het systeem moet zijn waar de kabels binnenkomen, omdat anders het water eruit zal lopen.
+
+### Concept 1: Scharnier
+Een lade is bevestigd aan de kluis via een scharnier aan de achterzijde. Een touw of kabel verbindt de voorkant van de lade met een haak of oog aan de bovenkant van de kluis.  
+Wanneer de batterij begint te branden, brandt het touw door, en valt de lade weg, waardoor de batterij in het water valt.
+
+### Concept 2: Katrol
+Een geperforeerde doos houdt de batterij zwevend boven een waterbak. De doos is verbonden met de waterbak via een katrollensysteem.  
+Als de batterij begint te branden, brandt het touw door en valt de batterij in het water, waardoor deze in de geperforeerde doos terechtkomt.
+
+### Concept 3: Schuif
+Dit concept heeft geen ingebouwde quick release. Door de lade naar buiten te schuiven (uit de kluis), kan een persoon op een veilige afstand de lade eruit trekken, zodat de batterij in het water valt.
+
+---
+
+Dit zijn slechts mogelijke concepten die verder moeten worden uitgewerkt. Het effectief realiseren van deze concepten valt niet binnen de scope of het budget van het Greenhouse Energy-project.
