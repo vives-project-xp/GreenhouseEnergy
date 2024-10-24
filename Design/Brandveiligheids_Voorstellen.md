@@ -10,7 +10,10 @@ Die van 271$ is groot genoeg voor ons project.
 Het voordeel van dit is dat we geen extra bewaterings systeem nodig gaan hebben omdat het daar goed zit.<br>
 https://www.batterysafetybox.com/sizes/<br>
 Voor ons project zouw Medium II een goeie oplossing zijn, maar we kunnen de prijs niet zien zolang we geen contact opnemen en dit zal waarschijnlijk richting de 1000-2000€ gaan.
-
+### Professioneel
+Het voordeel van dit product is dat hij een eigen temperatuur meter heeft waardoor hij zelf de batterypack in quarantaine kan steken.
+Het product is ontworpen en gemaakt geweest in bedoeling voor Lithium-ion batterijen op te bergen.
+https://www.emtez.be/nl-be/lithium-ion-quarantine-safety-cabinets
 
 ## Onderwaterzet systeem
 
