@@ -5,23 +5,23 @@ We hebben dus een spanning van 48V en we willen 1.8A, dan hebben we 26 Ohm nodig
 
 Opstelling:
 
-+| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -|  (13 batterijen in serie)
- |                                                                                      
- |----[W]--------+------------------------------+-------------------------------+      (W is de wattmeter)
-                 |                              |                               |
-                 [R1]                           [R2]                            [R3]   (3 weerstanden parallel)
-                 |                              |                               |
-                 +------------------------------+-------------------------------+
++| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -|  (13 batterijen in serie)<br>
+ |                                                                                      <br>
+ |----[W]--------+------------------------------+-------------------------------+      (W is de wattmeter)<br>
+                 |                              |                               |<br>
+                 [R1]                           [R2]                            [R3]   (3 weerstanden parallel)<br>
+                 |                              |                               |<br>
+                 +------------------------------+-------------------------------+<br>
 
 Als er een weerstand niet meer werkt dan doen we het met 1.2A weerstand: 40Ohm en 80Ohm per weerstand:
 
-+| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -|  (13 batterijen in serie)
- |                                                                                      
- |----[W]--------+-----------------------+                                      (W is de wattmeter)
-                 |                       |
-                 [R1]                    [R2]                                  (2 weerstanden parallel)
-                 |                       |
-                 +-----------------------+
++| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -| +| -|  (13 batterijen in serie)<br>
+ |                                                                                      <br>
+ |----[W]--------+-----------------------+                                      (W is de wattmeter)<br>
+                 |                       |<br>
+                 [R1]                    [R2]                                  (2 weerstanden parallel)<br>
+                 |                       |<br>
+                 +-----------------------+<br>
 
 Met de watt meter kijken we periodiek hoeveel arbeid er wordt gelevert door de batterij en dan weten we hoeveel Wh er in de batterijen zit.
 Af en toe schakelen we de wattmeter om naar een volt meter om te kijken of de batterijen ontladen zijn.
