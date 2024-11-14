@@ -26,6 +26,10 @@ Als er een weerstand niet meer werkt dan doen we het met 1.2A weerstand: 40Ohm e
 We hebben een nieuw pak weerstanden gekregen met een max van 3W en 100R, volgens suggestie van mr. Vereeck was het beter om eerst met 1A te werken.
 Hiervoor werken we met 6 Weerstanden parralel (16.66...R) en 3 in Serie (50R). Wattage per weerstand = (1/6)*16.66 = 2.77
 
+Alternatief design: in plaats van 6 parralel, 3 in serie 8 parralel 4 in serie: De weerstand is hetzelfde maar het wattage per weerstand vermindert.
+Totale weerstand: 12.5 * 4 = 50 Ohm
+Stroom bij volledig opgeladen (54.3V) = 54.3/50 = 1.084A
+Stroom bij ontladen = 39/50 = 0.78A
 
 
 Met de watt meter kijken we periodiek hoeveel arbeid er wordt gelevert door de batterij en dan weten we hoeveel Wh er in de batterijen zit.
