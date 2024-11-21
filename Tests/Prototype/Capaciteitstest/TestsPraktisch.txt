@@ -1,4 +1,4 @@
-Eerste test
+# Capaciteits-test
 Om erachter te komen hoeveel watt een batterij in het totaal heeft moeten we de Capaciteits test uitvoeren.
 Voor een hele set te testen hebben we voor de INR 18650E batterij een ideale stroom gevonden: 3.5A. Omdat ze met 2 parralel staan per cel is de ideale ontlaad stroom voor de hele set 7A, omdat we geen weerstand konden vinden die 7A nemen we een max stroom van 1.8A (0.6A per weerstand).
 We hebben dus een spanning van 48V en we willen 1.8A, dan hebben we 26 Ohm nodig, dan hebben we voor 3 parralle weerstanden 78Ohm nodig en zal er 0.6A per weerstand vloeien.
