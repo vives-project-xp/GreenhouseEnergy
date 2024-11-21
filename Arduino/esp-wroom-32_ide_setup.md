@@ -11,8 +11,10 @@ Gewoon downloaden op de site (https://www.arduino.cc/en/software)
 ### Linux
 Je kan kijken of de driver beschikbaar is op je systeem door dit uit te voeren:
 `ls -al /lib/modules/"$(uname -r)"/kernel/drivers/usb/serial/cp210x.ko`
-Hierna kan je de driver activeren op de volgende manier:
+. Hierna kan je de driver activeren op de volgende manier:
 `sudo modprobe cp210x`
+. In sommige distros moet je jezelf ook nog toegang geven tot de esp op de usb via volgend commando:
+`sudo usermod -aG dialout $(whoami)`
 ### Windows
 Je deze downloaden op https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers.
 
