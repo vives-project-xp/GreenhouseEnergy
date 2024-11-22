@@ -23,5 +23,9 @@ We kregen eerst de opdracht om elektriciteit te voorzien voor alle projecten die
 
 ![Elektrisch schema](./Documentation/Schematics/Elektrisch%20Schema.png)
 
+## De Batterij
+![Elektrisch schema](./Documentation/Schematics/Elektrisch%20schema%20batterij%20pack.png)
+
+
 ## Afmetingen
 max 60cm(lengte) - 26cm (breedte) - 7cm (hoogte)
