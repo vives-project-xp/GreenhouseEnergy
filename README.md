@@ -15,13 +15,17 @@ We kregen eerst de opdracht om elektriciteit te voorzien voor alle projecten die
 - Olivier Westerman (Communications, administratie)
 - Joshua Meuleman (Allround)
 
-## Hardware
+## Hardware en Functies
 - BMS: Gezondheid van de batterij beschermen en sensordata leveren via UART.
 - MPPT Charge controller: Opladen van de batterij aan het juiste voltage met de input van de zonnepanelen.
 - Batterijen 13-Serieel NRC8650PF ,INR18650E en NRC8650B met 3.7V samen 48V, in een modulair systeem om meer parallel te kunnen plaatsen.
 - Zekeringen tussen de MPPT, Batterij, Zonnepanelen (toekomstige uitbreiding) en Inverter (toekomstige uitbreiding).
 
 ![Elektrisch schema](./Documentation/Schematics/Elektrisch%20Schema.png)
+
+## De Batterij
+![Elektrisch schema](./Documentation/Schematics/Elektrisch%20schema%20batterij%20pack.png)
+
 
 ## Afmetingen
 max 60cm(lengte) - 26cm (breedte) - 7cm (hoogte)
