@@ -1,6 +1,10 @@
 #include <ArduinoJson.h>
 #include <Arduino.h>
 #include "connection.h"
+#include <HardwareSerial.h>
+
+// Instantieer UART1
+HardwareSerial myUART(0);
 
 #define WIFI_SSID "devbit"
 #define WIFI_PASS "Dr@@dloos!"
@@ -8,21 +12,32 @@ unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 HaConnection connection;
 String json;
+int truee = 0;
+String data = "";
+String dataOld = "";
 
 void setup() {
   Serial.begin(9600);
+  myUART.begin(9600, SERIAL_8N1, 20, 21);
   while(!connection.connected){
     connection = HaConnection(WIFI_SSID, WIFI_PASS, 80, true);
     connection.setup();
   }
-
-  Serial.println("Setup complete");
 }
 
 void loop() {
-  dataToJson();
-  connection.sendHttpPost(json);
-  delay(5000);
+  // read the incoming byte:
+  myUART.write("SALAM ALEKUL AKEKUM SALAM");
+    Serial.println("Serial");
+
+  if (myUART.available()) {
+    data = myUART.readString();
+    Serial.println("Serial: " + data);
+
+  }
+  //dataToJson();
+  //connection.sendHttpPost(json);
+  
 }
 
 
