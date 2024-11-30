@@ -17,7 +17,7 @@ String data = "";
 String dataOld = "";
 
 void setup() {
-  Serial.begin(9600);
+  Serial1.begin(9600);
   myUART.begin(9600, SERIAL_8N1, 20, 21);
   while(!connection.connected){
     connection = HaConnection(WIFI_SSID, WIFI_PASS, 80, true);
@@ -27,12 +27,12 @@ void setup() {
 
 void loop() {
   // read the incoming byte:
-  myUART.write("SALAM ALEKUL AKEKUM SALAM");
-    Serial.println("Serial");
+  //myUART.write("SALAM ALEKUL AKEKUM SALAM");
+  Serial1.println("Serial");
 
   if (myUART.available()) {
     data = myUART.readString();
-    Serial.println("Serial: " + data);
+    Serial0.println("Serial: " + data);
 
   }
   //dataToJson();
