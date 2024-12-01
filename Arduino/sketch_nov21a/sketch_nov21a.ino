@@ -4,8 +4,8 @@
 #include "connection.h"
 #include <HardwareSerial.h>
 
-HardwareSerial UART_PIN(0);
-HardwareSerial UART_USB(1);
+HardwareSerial UART_PIN(1);
+HardwareSerial UART_USB(0);
 
 #define WIFI_SSID "devbit"
 #define WIFI_PASS "Dr@@dloos!"
@@ -15,19 +15,29 @@ HaConnection connection;
 String json;
 
 void setup() {
-  UART_PIN.begin(115200, SERIAL_8N1, 20, 21);
+  UART_PIN.begin(115200, SERIAL_8N1, 0,1);
   UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
-  while(!connection.connected){
+  UART_USB.begin(115200);
+  UART_USB.write("daaa duuun");
+  /*while(!connection.connected){
     connection = HaConnection(WIFI_SSID, WIFI_PASS, 80, true);
     connection.setup();
-  }
+  }*/
 }
 
 void loop() {
+  String data = "niets";
+
+  if(UART_PIN.availableForWrite()){
+    UART_PIN.write("test data");
+  }
+  if(UART_PIN.available()){
+    data = UART_PIN.readString(); 
+    UART_USB.write((char *)&data[0]);
+  }
 
   //dataToJson();
   //connection.sendHttpPost(json);
-  
 }
 void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid is.
   uint8_t field[9]; //maximuum groote van field
