@@ -44,9 +44,15 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
   uint8_t value[33]; //maximuum groote van value
   uint8_t index = 0;
   bool valueBezig = false;
+
   uint8_t byte, prevbyte;
   uint8_t cs = 0;
   unsigned long laatste = 0xffffffff; //Als de functie wordt opgeroepen zal er worden gewacht tot de de laatste
+  
+  //json initialisatie.
+  JsonDocument doc;
+  doc["card-name"] = "Energy";
+
   while(true){
     if(UART_PIN.available()){
       prevbyte = byte;
@@ -56,8 +62,19 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
         if(prevbyte == 0x0D && byte == 0x0A){ //new line = volgende field
           valueBezig = false;
           index = 0;
-          //code voor opslaan key-value paar
+          //code voor opslaan key-value paar.
+          //nu gewoon nog in de terminal weergeven.
+          UART_USB.write(field,9);
+          UART_USB.write(" - ");
+          UART_USB.write(value, 33);
+          UART_USB.write("\n\r");
 
+          //voorbeeld voor json:
+          /*doc["sensors"][0]["name"] = "SoC";
+            doc["sensors"][0]["type"] = "Temperature";
+            doc["sensors"][0]["value"] = 100;
+            doc["sensors"][0]["unit"] = "%";
+          */
           //
         }else{
           value[index] = prevbyte;
@@ -80,6 +97,9 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
       //dus als er 2ms geen byte binnen kwam dan is dat het einde van de blok.
       if(millis() - laatste <= 2){
         //check sum nagaan en opslaan van belangerijke fields.
+        if(cs == 0){
+          //Hier opslaan en verzenden, anders moeten de tijdelijke records weg.
+        }
       }
     }
   }
@@ -89,8 +109,6 @@ void dataToJson(){
   JsonDocument doc;
 
   doc["card-name"] = "Energy";
-  doc["data"][0] = 48.756080;
-  doc["data"][1] = 2.302038;
   doc["sensors"][0]["name"] = "SoC";
   doc["sensors"][0]["type"] = "Temperature";
   doc["sensors"][0]["value"] = 100;
