@@ -98,7 +98,8 @@ Gebruik hiervoor wat schuurpapier, een vijl en/of dremel om hier en daar wat fil
 
 ### 2.5 Cel configuratie
 
-[Blueprint van de batterijpack]
+![Batterij TOP view](https://github.com/user-attachments/assets/977dd08c-69a5-4cb1-8fc4-bef69bd4f9e3)
+![Batterij BOTTOM view](https://github.com/user-attachments/assets/5760ca70-97ef-4d35-8264-ba187c2da8da)
 
 Plaats alle cellen in hun 3D-print brackets zoals aangeduid in de blueprint.  
 Deze opstelling komt overeen met een **13s13p configuratie** (*s = serieel, p = parallel*).
@@ -109,8 +110,8 @@ Deze opstelling komt overeen met een **13s13p configuratie** (*s = serieel, p = 
 - **Serieel:** Verbind de positieve pool van de eerste cel met de negatieve pool van de tweede. Dit verhoogt de spanning.
 
 ### 2.6 Puntlassen
-
-[Afbeelding van de cel configuratie]
+![Batterij TOP view](https://github.com/user-attachments/assets/c4c95865-fcfc-49dc-8b07-41321c4d530c)
+![Batterij BOTTOM view](https://github.com/user-attachments/assets/1c3c2889-edd0-49db-b54d-33df2c330a79)
 
 Gebruik de nikkelstrip en puntlasser om de verbindingen te maken volgens de blueprint:  
 - Knip stukken van de nikkelstrip in de juiste lengte.  
@@ -122,8 +123,7 @@ Gebruik de nikkelstrip en puntlasser om de verbindingen te maken volgens de blue
 - Totaal spanning over **BATT-** en **BATT+** moet **54.2V** zijn (13 × 4.2V).
 
 ### 2.7 BMS bevestigen
-
-[Blueprint van de batterijpack]
+![Batterij Schematic](https://github.com/user-attachments/assets/d3c89184-46a4-48a6-9459-c163e3d25e13)
 
 - Plaats de JK Smart-BMS op de platte bovenkant van de batterijpack.  
 - Soldeer rode kabeltjes aan iedere nikkelbrug tussen de celgroepen, zoals aangegeven in de blueprint.  
@@ -141,7 +141,8 @@ Soldeer de **BATT+** en **BATT-** met 16mm² kabels aan de BMS voor verbinding m
 
 ## 3. MPPT Charge Controller
 
-[Macro schema]
+![Macro Schematic](https://github.com/user-attachments/assets/270f1d57-49ca-45e4-8040-18445a7410c1)
+
 
 De MPPT charger heeft verbindingen voor:  
 - **BATT** (batterijpack)  
@@ -154,10 +155,11 @@ De MPPT charger heeft verbindingen voor:
 - Overweeg een differentieelschakelaar bij de LOAD, al is dit een duurdere optie.
 
 ## 4. Data collectie
+![Data Capture](https://github.com/user-attachments/assets/ef0dbfce-473d-4d72-b4d5-135abee5ed92)
 
-[Opstelling ESP] 
+
 ### 4.1 Protocol: 
-[Documentatie VE Direct protocol]
+[Documentatie VE Direct protocol](https://github.com/vives-project-xp/GreenhouseEnergy/blob/main/Documentation/DataSheets/MPPT%20Charger/VE.Direct-Protocol-3.33.pdf) 
 
 Onze gekozen MPPT charger gebruikt een propriëtair protocol genaamd **VE Direct** om data via UART uit te zenden.  
 Bekijk de documentatie zorgvuldig voor meer details.
