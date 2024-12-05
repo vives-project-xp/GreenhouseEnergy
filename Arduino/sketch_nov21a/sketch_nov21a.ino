@@ -19,10 +19,10 @@ void setup() {
   //UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
   UART_USB.begin(115200);
   UART_USB.write("daaa duuun");
-  /*while(!connection.connected){
+  while(!connection.connected){
     connection = HaConnection(WIFI_SSID, WIFI_PASS, 80, true);
     connection.setup();
-  }*/
+  }
 }
 
 void loop() {
@@ -34,6 +34,7 @@ void loop() {
   //}
   //dataToJson();
   //connection.sendHttpPost(json);
+  delay(1000);
 }
 void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid is.
   uint8_t field[9]; //maximuum groote van field
@@ -67,7 +68,7 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
           //voorbeeld voor json:
           if(strcmp((char *)&field[0],"V")==0){
             doc["sensors"][0]["name"] = "Batterij voltage";
-            doc["sensors"][0]["type"] = "Temperature";
+            doc["sensors"][0]["type"] = "Elektricity";
             doc["sensors"][0]["value"] = atoi((char *)&value[0]);
             doc["sensors"][0]["unit"] = "mV";
           }
@@ -100,24 +101,16 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
         //check sum nagaan en opslaan van belangerijke fields.
         if(cs == 0){
           //Hier opslaan en verzenden, anders moeten de tijdelijke records weg.
-          serializeJson(doc, UART_USB);
+          String paket;
+          serializeJson(doc, paket);
+          connection.sendHttpPost(paket);
+          UART_USB.write((char *)&paket[0]);
           doc.clear();
           doc["card-name"] = "Energy";
         }
       }
     }
   }
-}
-
-void dataToJson(){
-  JsonDocument doc;
-
-  doc["card-name"] = "Energy";
-  doc["sensors"][0]["name"] = "SoC";
-  doc["sensors"][0]["type"] = "Temperature";
-  doc["sensors"][0]["value"] = 100;
-  doc["sensors"][0]["unit"] = "%";
-  serializeJson(doc, json);
 }
 /*
 {
