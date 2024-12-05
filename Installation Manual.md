@@ -187,9 +187,6 @@ Je kan kijken of de driver beschikbaar is op je systeem door dit uit te voeren:
 **Windows**
 Je deze downloaden op https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers.
 
-## U bent klaar
-Nu kunt u code compileren en flashen.
-
 ### 4.3 Code voor ESP32: 
 **Code via Arduino IDE:**  
 [Code]
