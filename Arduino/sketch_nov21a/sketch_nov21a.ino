@@ -46,9 +46,8 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
   unsigned long laatste = 0xffffffff; //Als de functie wordt opgeroepen zal er worden gewacht tot de de laatste
   
   //json initialisatie.
-  //JsonDocument doc;
-  //doc["card-name"] = "Energy";
-
+  JsonDocument doc;
+  doc["card-name"] = "Energy";
   while(true){
     if(UART_PIN.available()){
       prevbyte = byte;
@@ -61,25 +60,26 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
           index = 0;
           //code voor opslaan key-value paar.
           //nu gewoon nog in de terminal weergeven.
-          UART_USB.write((char *)&field[0]);
-          UART_USB.write(" - ");
-          UART_USB.write((char *)&value[0]);
-          UART_USB.write("\n\r");
+          //UART_USB.write((char *)&field[0]);
+          //UART_USB.write(" - ");
+          //UART_USB.write((char *)&value[0]);
+          //UART_USB.write("\n\r");
           //voorbeeld voor json:
-          /*doc["sensors"][0]["name"] = "SoC";
+          if(strcmp((char *)&field[0],"V")==0){
+            doc["sensors"][0]["name"] = "Batterij voltage";
             doc["sensors"][0]["type"] = "Temperature";
-            doc["sensors"][0]["value"] = 100;
-            doc["sensors"][0]["unit"] = "%";
-          */
+            doc["sensors"][0]["value"] = atoi((char *)&value[0]);
+            doc["sensors"][0]["unit"] = "mV";
+          }
           //
         }else{
-          if(index != 0){
+          if(index != 0 && index < 33){
             value[index-1] = prevbyte;
           }
           index++;
         }
       }else{
-        if(index != 0){
+        if(index != 0 && index < 9){
           field[index-1] = prevbyte;
         }
         index++;
@@ -100,6 +100,9 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
         //check sum nagaan en opslaan van belangerijke fields.
         if(cs == 0){
           //Hier opslaan en verzenden, anders moeten de tijdelijke records weg.
+          serializeJson(doc, UART_USB);
+          doc.clear();
+          doc["card-name"] = "Energy";
         }
       }
     }
