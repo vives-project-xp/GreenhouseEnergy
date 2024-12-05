@@ -2,27 +2,36 @@
 #include <Arduino.h>
 #include <math.h>
 #include "connection.h"
+#include "sensor.h"
+#include "esp_task_wdt.h"
 #include <HardwareSerial.h>
 
 HardwareSerial UART_PIN(1);
 HardwareSerial UART_USB(0);
 
 #define WIFI_SSID "devbit"
-#define WIFI_PASS "Dr@@dloos!"
+#define WIFI_PASSWORD "Dr@@dloos!"
 unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
-HaConnection connection;
 String json;
-
+HaConnection connection;
+HaSensor sensor;
+esp_task_wdt_config_t twdt_config = {
+    .timeout_ms = 60000,    //reset na 1 minuut als de timer niet wordt gereset
+    .idle_core_mask = 0,    // Bitmask of all cores
+    .trigger_panic = true,
+};
 void setup() {
   UART_PIN.begin(19200, SERIAL_8N1, 0,1);
   //UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
   UART_USB.begin(115200);
-  UART_USB.write("daaa duuun");
-  while(!connection.connected){
-    connection = HaConnection(WIFI_SSID, WIFI_PASS, 80, true);
-    connection.setup();
-  }
+  connection = HaConnection(WIFI_SSID, WIFI_PASSWORD);
+  if (!connection.connected)
+    return;
+  sensor = HaSensor("Batterij voltage", SensorType::EC);
+  esp_task_wdt_deinit();
+  esp_task_wdt_init(&twdt_config);
+  esp_task_wdt_add(NULL);
 }
 
 void loop() {
@@ -34,7 +43,7 @@ void loop() {
   //}
   //dataToJson();
   //connection.sendHttpPost(json);
-  delay(1000);
+  delay(10000);
 }
 void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid is.
   uint8_t field[9]; //maximuum groote van field
@@ -67,10 +76,9 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
           //UART_USB.write("\n\r");
           //voorbeeld voor json:
           if(strcmp((char *)&field[0],"V")==0){
-            doc["sensors"][0]["name"] = "Batterij voltage";
-            doc["sensors"][0]["type"] = "Elektricity";
-            doc["sensors"][0]["value"] = atoi((char *)&value[0]);
-            doc["sensors"][0]["unit"] = "mV";
+            esp_task_wdt_reset();
+            sensor.setValue(atoi((char *)&value[0]));
+            
           }
           //
         }else{
@@ -101,12 +109,7 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
         //check sum nagaan en opslaan van belangerijke fields.
         if(cs == 0){
           //Hier opslaan en verzenden, anders moeten de tijdelijke records weg.
-          String paket;
-          serializeJson(doc, paket);
-          connection.sendHttpPost(paket);
-          UART_USB.write((char *)&paket[0]);
-          doc.clear();
-          doc["card-name"] = "Energy";
+          connection.sendData("Energy", {sensor});
         }
       }
     }
