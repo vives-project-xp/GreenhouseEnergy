@@ -59,7 +59,8 @@
 
 ### 1.3 3D prints
 
-[Link naar stl]
+[STL Bottom](https://github.com/vives-project-xp/GreenhouseEnergy/blob/main/Design/Brackets%203D/Bottom_volledig.stl)
+[STL Top](https://github.com/vives-project-xp/GreenhouseEnergy/blob/main/Design/Brackets%203D/Top_Volledig.stl)
 
 ## 2. Batterij Pack
 
