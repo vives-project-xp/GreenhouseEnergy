@@ -1,5 +1,28 @@
 # Greenhouse Battery: Installation Manual
 
+## Inhoudstafel
+
+1. [Benodigdheden](#1-benodigdheden)  
+    1.1 [Materialen](#11-materialen)  
+    1.2 [Gereedschap](#12-gereedschap)  
+    1.3 [3D Prints](#13-3d-prints)  
+2. [Batterij Pack](#2-batterij-pack)  
+    2.1 [Testen van Batterijen](#21-testen-van-batterijen)  
+    2.2 [Opladen van de Batterijen](#22-opladen-van-de-batterijen)  
+    2.3 [Lekstroom Test](#23-lekstroom-test)  
+    2.4 [3D Prints Voorbereiden](#24-3d-prints-voorbereiden)  
+    2.5 [Cel Configuratie](#25-cel-configuratie)  
+    2.6 [Puntlassen](#26-puntlassen)  
+    2.7 [BMS Bevestigen](#27-bms-bevestigen)  
+    2.8 [PVC Shrink Wrap](#28-pvc-shrink-wrap)  
+3. [MPPT Charge Controller](#3-mppt-charge-controller)  
+4. [Data Collectie](#4-data-collectie)  
+    4.1 [Protocol](#41-protocol)  
+    4.2 [Configureren van Arduino IDE](#42-configureren-van-arduino-ide)  
+    4.3 [Code voor ESP32](#43-code-voor-esp32)  
+
+---
+
 ## 1. Benodigdheden
 
 ### 1.1 Materialen
@@ -117,24 +140,6 @@ Soldeer de **BATT+** en **BATT-** met 16mm² kabels aan de BMS voor verbinding m
 
 ## 3. MPPT Charge Controller
 
-### 3.1 Data collectie
-
-[Opstelling ESP]  
-[Documentatie VE Direct protocol]
-
-Onze gekozen MPPT charger gebruikt een propriëtair protocol genaamd **VE Direct** om data via UART uit te zenden.  
-Bekijk de documentatie zorgvuldig voor meer details.
-
-**Samenvatting:**  
-- De charger stuurt iedere seconde data via UART.  
-- Dit kan worden uitgelezen op een ESP32 en gedeeld via de ingebouwde Wifi- of Bluetooth-module van de ESP32.  
-- Een **APA logic level shifter** is nodig om de 5V UART van de charger om te zetten naar 3V3 voor de ESP32.
-
-**Code via Arduino IDE:**  
-[Code]
-
-### 3.2 Verbindingen
-
 [Macro schema]
 
 De MPPT charger heeft verbindingen voor:  
@@ -146,4 +151,50 @@ De MPPT charger heeft verbindingen voor:
 - Strip de juiste kabels en verbind deze op de aangeduide plaatsen.  
 - Plaats zekeringen zoals aangegeven in het schema.  
 - Overweeg een differentieelschakelaar bij de LOAD, al is dit een duurdere optie.
+
+## 4. Data collectie
+
+[Opstelling ESP] 
+### 4.1 Protocol: 
+[Documentatie VE Direct protocol]
+
+Onze gekozen MPPT charger gebruikt een propriëtair protocol genaamd **VE Direct** om data via UART uit te zenden.  
+Bekijk de documentatie zorgvuldig voor meer details.
+
+**Samenvatting:**  
+- De charger stuurt iedere seconde data via UART.  
+- Dit kan worden uitgelezen op een ESP32 en gedeeld via de ingebouwde Wifi- of Bluetooth-module van de ESP32.  
+- Een **APA logic level shifter** is nodig om de 5V UART van de charger om te zetten naar 3V3 voor de ESP32.
+
+### 4.2 Configureren van Arduino IDE
+bron: https://samueladesola.medium.com/how-to-set-up-esp32-wroom-32-b2100060470c
+
+- Stap 1: Arduino IDE
+Gewoon downloaden op de site (https://www.arduino.cc/en/software)
+
+- Stap 2: board selectie
+ - Voeg "https://dl.espressif.com/dl/package_esp32_index.json" toe aan Preferences>Additionals boards manager URLs in arduino IDE.
+ - Installeer "esp32" van Boards manager in arduino IDE, als je het niet direct vind moet je wat wachten tot de aanpassingen van vorige stap zijn gesynchroniseerd.
+ - Selecteer "ESP32 Dev Module" als ontwikkel bord.
+- Stap3: Drivers
+**Linux**
+Je kan kijken of de driver beschikbaar is op je systeem door dit uit te voeren:
+`ls -al /lib/modules/"$(uname -r)"/kernel/drivers/usb/serial/cp210x.ko`
+. Hierna kan je de driver activeren op de volgende manier:
+`sudo modprobe cp210x`
+. In sommige distros moet je jezelf ook nog toegang geven tot de esp op de usb via volgend commando:
+`sudo usermod -aG dialout $(whoami)`
+**Windows**
+Je deze downloaden op https://www.silabs.com/developer-tools/usb-to-uart-bridge-vcp-drivers.
+
+## U bent klaar
+Nu kunt u code compileren en flashen.
+
+### 4.3 Code voor ESP32: 
+**Code via Arduino IDE:**  
+[Code]
+
+
+
+
 
