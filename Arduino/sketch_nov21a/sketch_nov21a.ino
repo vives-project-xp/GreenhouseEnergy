@@ -15,8 +15,8 @@ HaConnection connection;
 String json;
 
 void setup() {
-  UART_PIN.begin(115200, SERIAL_8N1, 0,1);
-  UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
+  UART_PIN.begin(19200, SERIAL_8N1, 0,1);
+  //UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
   UART_USB.begin(115200);
   UART_USB.write("daaa duuun");
   /*while(!connection.connected){
@@ -27,15 +27,11 @@ void setup() {
 
 void loop() {
   String data = "niets";
-
-  if(UART_PIN.availableForWrite()){
-    UART_PIN.write("test data");
-  }
-  if(UART_PIN.available()){
-    data = UART_PIN.readString(); 
-    UART_USB.write((char *)&data[0]);
-  }
-
+  BlokLees();
+  //if(UART_PIN.available()){
+    //data = UART_PIN.readString();
+    //UART_USB.write(UART_PIN.read());
+  //}
   //dataToJson();
   //connection.sendHttpPost(json);
 }
@@ -45,30 +41,30 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
   uint8_t index = 0;
   bool valueBezig = false;
 
-  uint8_t byte, prevbyte;
+  uint8_t byte = 0, prevbyte = 0;
   uint8_t cs = 0;
   unsigned long laatste = 0xffffffff; //Als de functie wordt opgeroepen zal er worden gewacht tot de de laatste
   
   //json initialisatie.
-  JsonDocument doc;
-  doc["card-name"] = "Energy";
+  //JsonDocument doc;
+  //doc["card-name"] = "Energy";
 
   while(true){
     if(UART_PIN.available()){
       prevbyte = byte;
-      uint8_t byte = UART_PIN.read();
+      byte = UART_PIN.read();
       cs += byte;
       if(valueBezig){
         if(prevbyte == 0x0D && byte == 0x0A){ //new line = volgende field
           valueBezig = false;
+          value[index-1] = 0;
           index = 0;
           //code voor opslaan key-value paar.
           //nu gewoon nog in de terminal weergeven.
-          UART_USB.write(field,9);
+          UART_USB.write((char *)&field[0]);
           UART_USB.write(" - ");
-          UART_USB.write(value, 33);
+          UART_USB.write((char *)&value[0]);
           UART_USB.write("\n\r");
-
           //voorbeeld voor json:
           /*doc["sensors"][0]["name"] = "SoC";
             doc["sensors"][0]["type"] = "Temperature";
@@ -77,23 +73,28 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
           */
           //
         }else{
-          value[index] = prevbyte;
+          if(index != 0){
+            value[index-1] = prevbyte;
+          }
           index++;
         }
       }else{
-        field[index] = prevbyte;
+        if(index != 0){
+          field[index-1] = prevbyte;
+        }
         index++;
         if(byte == 0x09){ //horizontale tab = value nu
           valueBezig = true;
+          field[index-1] = 0;
           index = 0;
         }
       }
       laatste = millis();
     }else{
       //apparaat verstuurt een blok van max 22 velden per seconde
-      //boud rate = 115200
+      //boud rate = 19200
       //bits per char (8N1) = 10
-      //byte snelheid = 11520Hz
+      //byte snelheid = 1920Hz
       //dus als er 2ms geen byte binnen kwam dan is dat het einde van de blok.
       if(millis() - laatste <= 2){
         //check sum nagaan en opslaan van belangerijke fields.
