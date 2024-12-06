@@ -5,7 +5,7 @@
 - [The project](#the-project)
 - [Wie zijn we](#wie-zijn-we)
 - [Hardware](#hardware-en-functies)
-- [Bill of Materials](#Bill-of-Materials)
+- [Bill of Materials](#bill-of-materials)
 - [Batterij](#de-batterij)
 
 
@@ -44,10 +44,18 @@ We kregen eerst de opdracht om elektriciteit te voorzien voor alle projecten die
 | ESP32-C3-DevkitM-1        | 1           | €6.00         | 1965-ESP32-C3-DEVKITM-1-ND |
 | Mini Micro JST 2,0 mm 4-poliger stekker | 1 | €0.4     | Generisch          |
 | PVC shrinkwrap            | 300mm diameter, 3m lang | €16.99 | B0DMNPQVVZ |
-## De Batterij
 
 # De Batterij:
 ## Afmetingen
 max 40cm(lengte) - 30cm (breedte) - 10cm (hoogte)
+## Specificaties:
+| Batterij              | Berekend | Gemeten |
+|---------------------------|-------------|---------------|
+| Voltage | min 39V , average 48V, max 54.2V | average 48.2V |
+| Ontlaadstroom      | max 20A |  nvt    | 
+| Oplaadstroom      | max 20A |  nvt    | 
+| Capaciteit           | 1.25 kWh         |   1.12 kWh|
+
+
 ![Batterij Schematic](https://github.com/user-attachments/assets/7456a43b-e366-4438-bcc8-47521168dfc4)
 
