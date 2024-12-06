@@ -20,6 +20,7 @@
     4.1 [Protocol](#41-protocol)  
     4.2 [Configureren van Arduino IDE](#42-configureren-van-arduino-ide)  
     4.3 [Code voor ESP32](#43-code-voor-esp32)  
+5. [Achitectuur](#5-Architectuur)
 
 ---
 
@@ -194,7 +195,8 @@ Je deze downloaden op https://www.silabs.com/developer-tools/usb-to-uart-bridge-
 **Code via Arduino IDE:**  
 [Code]
 
-
+# 5. Architectuur
+[]
 
 
 
