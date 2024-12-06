@@ -196,7 +196,8 @@ Je deze downloaden op https://www.silabs.com/developer-tools/usb-to-uart-bridge-
 [Code]
 
 # 5. Architectuur
-[]
+![MPPT charger (1)](https://github.com/user-attachments/assets/9f73258f-7189-495a-845a-5d5f59af6de7)
+
 
 
 
