@@ -28,21 +28,14 @@ void setup() {
   connection = HaConnection(WIFI_SSID, WIFI_PASSWORD);
   if (!connection.connected)
     return;
-  sensor = HaSensor("Batterij voltage", SensorType::EC);
+  sensor = HaSensor("SoC", SensorType::BATTERYLEVEL,0,100);
   esp_task_wdt_deinit();
   esp_task_wdt_init(&twdt_config);
   esp_task_wdt_add(NULL);
 }
 
 void loop() {
-  String data = "niets";
   BlokLees();
-  //if(UART_PIN.available()){
-    //data = UART_PIN.readString();
-    //UART_USB.write(UART_PIN.read());
-  //}
-  //dataToJson();
-  //connection.sendHttpPost(json);
   delay(10000);
 }
 void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid is.
@@ -77,8 +70,7 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
           //voorbeeld voor json:
           if(strcmp((char *)&field[0],"V")==0){
             esp_task_wdt_reset();
-            sensor.setValue(atoi((char *)&value[0]));
-            
+            sensor.setValue(get_bat_persentage(atoi((char *)&value[0])));
           }
           //
         }else{
@@ -115,22 +107,43 @@ void BlokLees(){  //blokkerende functie tot het verzenden van een blok voltooid 
     }
   }
 }
-/*
-{
-    "card-name": "Sensoring team",
-    "sensors": [
-        {
-            "name": "Temperature meting",
-            "type": "Temperature",
-            "value": 25,
-            "unit": "%"
-        },
-        {
-            "name": "Humidity meting",
-            "type": "Humidity",
-            "value": 50,
-            "unit": "%"
-        }
-
-    ]
-}*/
+int get_bat_persentage(int mv){
+  /* Informatie komt uit test data.
+  V: %
+  52,71: 100
+  51,45: 90
+  50,34: 80
+  49,29: 70
+  48,35: 60
+  47,66: 50
+  47,09: 40
+  46,5:  30
+  45,77: 20
+  42,72: 10
+  40,9:  5
+  39,1:  0
+  */
+  if(mv > 51450)
+    return 100;
+  if(mv > 50340)
+    return 90;
+  if(mv > 49290)
+    return 80;
+  if(mv > 48350)
+    return 70;
+  if(mv > 47660)
+    return 60;
+  if(mv > 47090)
+    return 50;
+  if(mv > 46500)
+    return 40;
+  if(mv > 45770)
+    return 30;
+  if(mv > 42720)
+    return 20;
+  if(mv > 40900)
+    return 10;
+  if(mv > 39100)
+    return 5;
+  return 0;
+}
