@@ -25,6 +25,7 @@ Om deze reden starten we met een aantal voorbeeldscenario’s die een indicatie 
   - **Maximale configuratie**: 3 panelen in serie, 3 parallel (resulterend in een configuratie van 100/33 V en 30/11 A).
 - **Zekeringen en schakelaars**: Geschikt voor 30A en 48V.
 - **Schematische voorstelling**:
+
 ![image](https://github.com/user-attachments/assets/6012edfb-80f1-4d9d-8b40-6e8feae693fe)
 
 
@@ -40,6 +41,7 @@ Om deze reden starten we met een aantal voorbeeldscenario’s die een indicatie 
 - Minstens 6 panelen van 400 Wp in een combinatie van serie en parallel voor een optimale balans tussen voltage en stroom.
 - **Zekeringen en schakelaars**: Geschikt voor hogere stroomsterktes, minimaal 100A.
 - **Schematische voorstelling**:
+
 ![victron 5kWh](https://github.com/user-attachments/assets/20904c97-2b2b-43b5-8c70-f17192275a93)
 
 
@@ -55,7 +57,8 @@ Om deze reden starten we met een aantal voorbeeldscenario’s die een indicatie 
 - **Aanbevolen configuratie**: twee strings van zes panelen in serie.
 - **Zekeringen en schakelaars**: Geschikt voor stroomsterktes tot 200A.
 - **Schematische voorstelling**:
-[]
+
+![image](https://github.com/user-attachments/assets/06eac37b-138a-4965-af20-17aead99801d)
 
 
 ---
