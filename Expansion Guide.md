@@ -25,7 +25,8 @@ Om deze reden starten we met een aantal voorbeeldscenario’s die een indicatie 
   - **Maximale configuratie**: 3 panelen in serie, 3 parallel (resulterend in een configuratie van 100/33 V en 30/11 A).
 - **Zekeringen en schakelaars**: Geschikt voor 30A en 48V.
 - **Schematische voorstelling**:
-[]
+![image](https://github.com/user-attachments/assets/6012edfb-80f1-4d9d-8b40-6e8feae693fe)
+
 
 
 ### Scenario 2: Gemiddeld dagelijks verbruik van 5 kWh
