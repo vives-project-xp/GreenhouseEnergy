@@ -40,7 +40,8 @@ Om deze reden starten we met een aantal voorbeeldscenario’s die een indicatie 
 - Minstens 6 panelen van 400 Wp in een combinatie van serie en parallel voor een optimale balans tussen voltage en stroom.
 - **Zekeringen en schakelaars**: Geschikt voor hogere stroomsterktes, minimaal 100A.
 - **Schematische voorstelling**:
-[]
+![victron 5kWh](https://github.com/user-attachments/assets/20904c97-2b2b-43b5-8c70-f17192275a93)
+
 
 
 ### Scenario 3: Gemiddeld dagelijks verbruik van 10 kWh
