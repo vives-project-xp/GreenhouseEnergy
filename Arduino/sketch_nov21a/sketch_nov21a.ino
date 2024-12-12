@@ -25,7 +25,7 @@ void setup() {
   UART_PIN.begin(19200, SERIAL_8N1, 0,1);
   //UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
   UART_USB.begin(115200);
-  connection = HaConnection(WIFI_SSID, WIFI_PASSWORD);
+  connection = HaConnection(WIFI_SSID, WIFI_PASSWORD, "10.10.2.20", 8123, 80, true);
   if (!connection.connected)
     return;
   sensor = HaSensor("SoC", SensorType::BATTERYLEVEL,0,100);
