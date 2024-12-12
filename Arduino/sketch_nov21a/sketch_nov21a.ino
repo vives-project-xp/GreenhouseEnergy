@@ -22,6 +22,8 @@ esp_task_wdt_config_t twdt_config = {
     .trigger_panic = true,
 };
 void setup() {
+  pinMode(2,OUTPUT);
+  digitalWrite(2,1);//pin 2 gebruiken voor 3V3 output.
   UART_PIN.begin(19200, SERIAL_8N1, 0,1);
   //UART_PIN.setRxBufferSize(1024); //genoeg voor ontvangst van een voledige blok
   UART_USB.begin(115200);
